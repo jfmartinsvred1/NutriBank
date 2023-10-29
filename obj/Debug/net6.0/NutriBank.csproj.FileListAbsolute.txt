@@ -70,3 +70,13 @@ C:\Users\Joao\Desktop\Projetos\NutriBank\obj\Debug\net6.0\ref\NutriBank.dll
 C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\FrontEnd\angular.json
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\FrontEnd\package-lock.json
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\FrontEnd\package.json
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\FrontEnd\tsconfig.app.json
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\FrontEnd\tsconfig.json
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\FrontEnd\tsconfig.spec.json
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\Joao\Desktop\Projetos\NutriBank\bin\Debug\net6.0\System.Web.Http.Cors.dll

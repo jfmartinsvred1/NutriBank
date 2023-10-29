@@ -8,6 +8,8 @@ using NutriBank.Models;
 using NutriBank.Services;
 using System.Text;
 
+var myAllowSpecifOrigins = "myAllowSpecifOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 var Conn = builder.Configuration.GetConnectionString("NutriBankConn");
@@ -18,6 +20,16 @@ builder.Services
     .AddIdentity<Usuario, IdentityRole<Guid>>()
     .AddEntityFrameworkStores<NutriBankContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.AddCors(opts =>
+{
+    opts.AddPolicy(name: myAllowSpecifOrigins, builder => 
+    {
+        builder.WithOrigins("http://localhost:4200")
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
 
 builder.Services.AddControllers().AddNewtonsoftJson
     (opts => opts.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
@@ -65,6 +77,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(myAllowSpecifOrigins);
 
 app.UseAuthentication();
 
