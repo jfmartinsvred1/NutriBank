@@ -22,11 +22,11 @@ namespace NutriBank.Controllers
             _contaBancariaService.Create(dto);
             return Ok("Conta Criada Com Sucesso!");
         }
-        [HttpGet("{cpf}")]
+        [HttpGet("{username}")]
         [Authorize]
-        public IActionResult Get(string cpf)
+        public IActionResult Get(string username)
         {
-            return Ok(_contaBancariaService.Get(cpf));
+            return Ok(_contaBancariaService.Get(username));
         }
     }
 }

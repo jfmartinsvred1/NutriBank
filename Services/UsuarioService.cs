@@ -50,6 +50,12 @@ namespace NutriBank.Services
 
             return token;
         }
+        internal string GetCpf(string username)
+        {
+            var user= _signInManager.UserManager.Users.FirstOrDefault(user => user.NormalizedUserName ==username.ToUpper());
+
+            return user.Cpf;
+        }
 
     }
 }

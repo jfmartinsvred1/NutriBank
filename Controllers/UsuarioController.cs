@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NutriBank.Data.Dtos;
 using NutriBank.Services;
 
@@ -22,11 +23,13 @@ namespace NutriBank.Controllers
             await _usuarioService.Cadastra(dto);
             return Ok("Usuário Cadastrado Com Sucesso!");
         }
+        [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<IActionResult> LoginAsync(LoginUsuarioDto dto)
+        [Produces("application/json")]
+        public async Task<string> LoginAsync(LoginUsuarioDto dto)
         {
             var token = await _usuarioService.Login(dto);
-            return Ok(token);
+            return token;
         }
     }
 }

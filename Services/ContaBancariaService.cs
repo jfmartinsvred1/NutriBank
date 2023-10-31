@@ -12,12 +12,14 @@ namespace NutriBank.Services
         private IMapper _mapper;
         private NutriBankContext _context;
         private UserManager<Usuario> _userManager;
+        private UsuarioService _userService;
 
-        public ContaBancariaService(IMapper mapper, NutriBankContext context, UserManager<Usuario> userManager)
+        public ContaBancariaService(IMapper mapper, NutriBankContext context, UserManager<Usuario> userManager, UsuarioService userService)
         {
             _mapper = mapper;
             _context = context;
             _userManager = userManager;
+            _userService = userService;
         }
         public void Create(CreateContaBancariaDto dtoBanco)
         {
@@ -41,8 +43,9 @@ namespace NutriBank.Services
             _context.ContasBancarias.Add(conta);
             _context.SaveChanges();
         }
-        public ReadContaBancariaDto Get(string cpf)
+        public ReadContaBancariaDto Get(string username)
         {
+            var cpf = _userService.GetCpf(username);
             var conta = _mapper.Map<ReadContaBancariaDto>(_context.ContasBancarias.FirstOrDefault(c => c.Cpf == cpf));
             if (conta == null)
             {
